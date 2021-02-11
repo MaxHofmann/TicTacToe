@@ -1,21 +1,21 @@
-const game = document.getElementById("game");
-const block = document.getElementsByClassName("block");
-const batman = document.getElementById("batman");
-const groot = document.getElementById("groot");
-const buttonRestart = document.getElementById("button-rest");
+const game = document.getElementById('game');
+const block = document.getElementsByClassName('block');
+const batman = document.getElementById('batman');
+const groot = document.getElementById('groot');
+const buttonRestart = document.getElementById('button-rest');
 
 let hod = 0;
 
 const fn = (event) => {
-  const batAudio = new Audio("audio/batman.mp3");
-  const groAudio = new Audio("audio/groot.mp3");
+  const batAudio = new Audio('audio/batman.mp3');
+  const groAudio = new Audio('audio/groot.mp3');
   const blockItem = event.target;
 
-  if (event.target.id !== "game") {
+  if (event.target.id !== 'game') {
     hod++;
     hod % 2 == 0
-      ? ((blockItem.className = "batman block"), batAudio.play())
-      : ((blockItem.className = "groot block"), groAudio.play());
+      ? ((blockItem.className = 'batman block'), batAudio.play())
+      : ((blockItem.className = 'groot block'), groAudio.play());
     checkWinner();
   }
 };
@@ -34,43 +34,43 @@ function checkWinner() {
 
   for (let i = 0; i < combArr.length; i++) {
     if (
-      block[combArr[i][0]].className == "batman block" &&
-      block[combArr[i][1]].className == "batman block" &&
-      block[combArr[i][2]].className == "batman block"
+      block[combArr[i][0]].className == 'batman block' &&
+      block[combArr[i][1]].className == 'batman block' &&
+      block[combArr[i][2]].className == 'batman block'
     ) {
       batman.innerText++;
       setTimeout(() => {
-        block[combArr[i][0]].classList.add("winnerComb", "batman-bg");
-        block[combArr[i][1]].classList.add("winnerComb", "batman-bg");
-        block[combArr[i][2]].classList.add("winnerComb", "batman-bg");
+        block[combArr[i][0]].classList.add('winnerComb', 'batman-bg');
+        block[combArr[i][1]].classList.add('winnerComb', 'batman-bg');
+        block[combArr[i][2]].classList.add('winnerComb', 'batman-bg');
       }, 100);
       for (const item of block) {
-        item.removeEventListener("click", fn, {
+        item.removeEventListener('click', fn, {
           once: true,
         });
       }
     } else if (
-      block[combArr[i][0]].className == "groot block" &&
-      block[combArr[i][1]].className == "groot block" &&
-      block[combArr[i][2]].className == "groot block"
+      block[combArr[i][0]].className == 'groot block' &&
+      block[combArr[i][1]].className == 'groot block' &&
+      block[combArr[i][2]].className == 'groot block'
     ) {
       groot.innerText++;
       setTimeout(() => {
-        block[combArr[i][0]].classList.add("winnerComb", "groot-bg");
-        block[combArr[i][1]].classList.add("winnerComb", "groot-bg");
-        block[combArr[i][2]].classList.add("winnerComb", "groot-bg");
+        block[combArr[i][0]].classList.add('winnerComb', 'groot-bg');
+        block[combArr[i][1]].classList.add('winnerComb', 'groot-bg');
+        block[combArr[i][2]].classList.add('winnerComb', 'groot-bg');
       }, 100);
       for (const item of block) {
-        item.removeEventListener("click", fn, {
+        item.removeEventListener('click', fn, {
           once: true,
         });
       }
     } else if (hod == 9) {
-      block[combArr[i][0]].classList.add("winnerComb", "draw-bg");
-      block[combArr[i][1]].classList.add("winnerComb", "draw-bg");
-      block[combArr[i][2]].classList.add("winnerComb", "draw-bg");
+      block[combArr[i][0]].classList.add('winnerComb', 'draw-bg');
+      block[combArr[i][1]].classList.add('winnerComb', 'draw-bg');
+      block[combArr[i][2]].classList.add('winnerComb', 'draw-bg');
       for (const item of block) {
-        item.removeEventListener("click", fn, {
+        item.removeEventListener('click', fn, {
           once: true,
         });
       }
@@ -81,17 +81,17 @@ function checkWinner() {
 function restarFunc() {
   hod = 0;
   for (const item of block) {
-    item.className = "block";
-    item.addEventListener("click", fn, {
+    item.className = 'block';
+    item.addEventListener('click', fn, {
       once: true,
     });
   }
 }
 
 for (const item of block) {
-  item.addEventListener("click", fn, {
+  item.addEventListener('click', fn, {
     once: true,
   });
 }
 
-buttonRestart.addEventListener("click", restarFunc);
+buttonRestart.addEventListener('click', restarFunc);
