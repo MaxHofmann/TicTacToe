@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>TicTacToe</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="toy-box" style="background-image: url(img/bg1.JPG)">
+        <div class="text-game numbers">
+          <p>Tic Tac Toe</p>
+        </div>
+        <div class="winner-tabl">
+          <div class="numbers">
+            <div class="bat-gro-box">
+              <span class="bat-style">Batman -</span>
+              <span id="batman" class="bat bat-style">0</span>
+            </div>
+            <p>vs</p>
+            <div class="bat-gro-box">
+              <span id="groot" class="gro gro-style">0 </span>
+              <span class="gro-style">- Groot</span>
+            </div>
+          </div>
+        </div>
+        <div id="game" class="toy">
+          <div class="block"></div>
+          <div class="block"></div>
+          <div class="block"></div>
+          <div class="block"></div>
+          <div class="block"></div>
+          <div class="block"></div>
+          <div class="block"></div>
+          <div class="block"></div>
+          <div class="block"></div>
+        </div>
+        <div class="button">
+          <button id="button-rest" class="button-restart">restart</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
