@@ -3,6 +3,7 @@ const block = document.getElementsByClassName('block');
 const batman = document.getElementById('batman');
 const groot = document.getElementById('groot');
 const buttonRestart = document.getElementById('button-rest');
+const buttonDraw = document.getElementById('button-draw');
 
 let hod = 0;
 
@@ -66,19 +67,28 @@ function checkWinner() {
         });
       }
     } else if (hod == 9) {
-      block[combArr[i][0]].classList.add('winnerComb', 'draw-bg');
-      block[combArr[i][1]].classList.add('winnerComb', 'draw-bg');
-      block[combArr[i][2]].classList.add('winnerComb', 'draw-bg');
-      for (const item of block) {
-        item.removeEventListener('click', fn, {
-          once: true,
-        });
+      setTimeout(() => {
+        buttonDraw.className = 'draw button-class';
+        buttonDraw.addEventListener('click', funcDraw);
+      }, 1000);
+      function funcDraw() {
+        setTimeout(() => restarFunc(), 2000);
+
+        block[combArr[i][0]].classList.add('winnerComb', 'draw-bg');
+        block[combArr[i][1]].classList.add('winnerComb', 'draw-bg');
+        block[combArr[i][2]].classList.add('winnerComb', 'draw-bg');
+        for (const item of block) {
+          item.removeEventListener('click', fn, {
+            once: true,
+          });
+        }
       }
     }
   }
 }
 
 function restarFunc() {
+  buttonDraw.className = 'div-none';
   hod = 0;
   for (const item of block) {
     item.className = 'block';

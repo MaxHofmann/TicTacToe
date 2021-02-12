@@ -67,6 +67,7 @@ button:focus {
 }
 
 .toy {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -109,7 +110,7 @@ button:focus {
   transition: 0.3s;
 }
 
-.button-restart {
+.button-class {
   text-transform: uppercase;
   font-size: 20px;
   font-weight: 800;
@@ -117,8 +118,11 @@ button:focus {
   cursor: pointer;
   color: #111;
   border-radius: 5px;
-  background-color: rgb(219, 13, 13);
   transition: background-color 0.3s;
+}
+
+.button-restart {
+  background-color: rgb(219, 13, 13);
 }
 
 .button-restart:hover {
@@ -146,67 +150,42 @@ button:focus {
 }
 
 @keyframes shaking-comb {
-  1% {
-    transform: translateX(-2%);
-  }
-  5% {
-    transform: translateX(2%);
-  }
-  10% {
-    transform: translateX(-2%);
-  }
-  15% {
-    transform: translateX(2%);
-  }
-  20% {
-    transform: translateX(-2%);
-  }
-  25% {
-    transform: translateX(2%);
-  }
-  30% {
-    transform: translateX(-2%);
-  }
-  35% {
-    transform: translateX(2%);
-  }
-  40% {
-    transform: translateX(-2%);
-  }
-  45% {
-    transform: translateX(2%);
-  }
-  50% {
-    transform: translateX(-2%);
-  }
-  55% {
-    transform: translateX(2%);
-  }
-  60% {
-    transform: translateX(-2%);
-  }
-  65% {
-    transform: translateX(2%);
-  }
-  70% {
-    transform: translateX(-2%);
-  }
-  75% {
-    transform: translateX(2%);
-  }
-  80% {
-    transform: translateX(-2%);
-  }
-  85% {
-    transform: translateX(2%);
-  }
-  90% {
-    transform: translateX(-2%);
-  }
-  95% {
-    transform: translateX(2%);
-  }
-  100% {
-    transform: translateX(-2%);
-  }
+  1% {transform: translateX(-2%);}
+  5% {transform: translateX(2%);}
+  10% {transform: translateX(-2%);}
+  15% {transform: translateX(2%);}
+  20% {transform: translateX(-2%);}
+  25% {transform: translateX(2%);}
+  30% {transform: translateX(-2%);}
+  35% {transform: translateX(2%);}
+  40% {transform: translateX(-2%);}
+  45% {transform: translateX(2%);}
+  50% {transform: translateX(-2%);}
+  55% {transform: translateX(2%);}
+  60% {transform: translateX(-2%);}
+  65% {transform: translateX(2%);}
+  70% {transform: translateX(-2%);}
+  75% {transform: translateX(2%);}
+  80% {transform: translateX(-2%);}
+  85% {transform: translateX(2%);}
+  90% {transform: translateX(-2%);}
+  95% {transform: translateX(2%);}
+  100% {transform: translateX(-2%);}
+}
+
+.div-none {
+  display: none;
+}
+
+.draw {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: -88px;
+  position: absolute;
+  background-color: rgb(54, 248, 16);
+}
+
+.draw:hover {
+  background-color: rgb(7, 125, 241);
 }
